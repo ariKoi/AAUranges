@@ -963,18 +963,6 @@ server <- function(input, output, session) {
     gtblFull$gt_tbls$gt_tbl
    
   })
-
-    # message(curl::curl_version()$version) # check curl is installed
-    # if (identical(Sys.getenv("R_CONFIG_ACTIVE"), "shinyapps")) {
-    #   chromote::set_default_chromote_object(
-    #     chromote::Chromote$new(chromote::Chrome$new(
-    #       args = c("--disable-gpu", 
-    #                "--no-sandbox", 
-    #                "--disable-dev-shm-usage", # required bc the target easily crashes
-    #                c("--force-color-profile", "srgb"))
-    #     ))
-    #   )
-    # }
     
     output$export <- downloadHandler(
       filename = function() {
@@ -1024,20 +1012,8 @@ server <- function(input, output, session) {
         
         reportOut$rep |> gtsave_rep(file)
         
-        # message(curl::curl_version()$version) # check curl is installed
-        # if (identical(Sys.getenv("R_CONFIG_ACTIVE"), "shinyapps")) {
-        #   chromote::set_default_chromote_object(
-        #     chromote::Chromote$new(chromote::Chrome$new(
-        #       args = c("--disable-gpu",
-        #                "--no-sandbox",
-        #                "--disable-dev-shm-usage", # required bc the target easily crashes
-        #                c("--force-color-profile", "srgb"))
-        #     ))
-        #   )
-        # }
-        
-        # f <- chromote::default_chromote_object()
-        # f$close()
+        f <- chromote::default_chromote_object()
+        f$close()
         
       }
     )
