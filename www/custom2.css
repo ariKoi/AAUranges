@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+.brand-link {
+    display: block;
+    font-family: "Roboto Slab";
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding: 0.8125rem 0.3rem;
+    transition: width .3s ease-in-out;
+    white-space: nowrap;
+    border-bottom: 0px!important;
+    margin-left: 5rem;
+    margin-top: 0.8rem;
+}
+
+.main-header.navbar.navbar-expand.border-bottom-0.navbar-light.navbar-white {
+  background-color: white; /* #f4f6f9 */
+}
