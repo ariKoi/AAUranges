@@ -1,15 +1,6 @@
 
-library(shiny)
-
-library(tidyverse)
-library(rms) 
-library(gt)
-
-library(bs4Dash)
-library(shinyjs)
-library(shinybusy)
-library(bslib)
-library(shinybusy)
+# install.packages("pacman")
+pacman::p_load(shiny, tidyverse, rms, gt, bs4Dash, shinyjs, bslib, shinybusy)
 
 mw_dat <- data.frame(compound = c("Glycine","Alanine","Valine","Cysteine","Taurine","Isoleucine","Leucine","Glutamine","Glutamic acid","Methionine","Arginine"), mw = c(75.06,89.09,117.15,121.16,125.14,131.17,131.17,146.14,147.13,149.21,174.2))
 
