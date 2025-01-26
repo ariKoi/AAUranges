@@ -296,7 +296,7 @@ server <- function(input, output, session) {
       shiny::validate(need(all(colnames(meta_data_in$df) %in% meta_data_in_req_colNames), message = FALSE))
     }
     
-    if(!is.null(meta_data_in$df$sex) & !all(meta_data_in$df$sex %in% meta_data_in_req_genderNames, na.rm = TRUE)) {
+    if(!is.null(meta_data_in$df$sex) & !all(na.omit(meta_data_in$df$sex) %in% meta_data_in_req_genderNames)) {
       shinyjs::alert(paste0("Valid Meta Data `sex` column values are the following: ", paste0(meta_data_in_req_genderNames, collapse = ", "), ". Please correct and reload."))
     shinyjs::reset("meta_data")
     shiny::validate(need(all(meta_data_in$df$sex %in% meta_data_in_req_genderNames, na.rm = TRUE), message = FALSE))
